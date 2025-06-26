@@ -1,0 +1,18 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: hugo-docs
+  namespace: default
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`docs.etna.student`)
+    kind: Rule
+    services:
+    - name: hugo
+      port: 1313
+    middlewares:
+    - name: auth
+  tls:
+    certResolver: default

@@ -1,0 +1,4 @@
+baseURL = "https://docs.etna.student"
+languageCode = "en-us"
+title = "Documentation Cruise"
+theme = "ananke"
